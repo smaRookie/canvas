@@ -6,29 +6,11 @@
 	<title>Document</title>
 </head>
 <body>
-	<div id="d" style="border:1px solid red;height:80px">click me</div>
-	<ul id="menu" style="position:absolute;visibility:hidden;background-color:silver;">
-	    <li><a href="">kabuda</a></li>
-	    <li><a href="">aoteman</a></li>
-	    <li><a href="">hulkuwan</a></li>
-	    <li><a href="">xghj</a>/li>
-	</ul>
-	<script type="text/javascript">
-      var div=document.getElementById('d');
-      // contextmenu 右键事件
-      d.addEventListener('contextmenu',function(event){
-      	// 清除默认的右键菜单
-      	event.preventDefault();
-
-      	var menu=document.getElementById('menu');
-      	menu.style.left=event.pageX + 'px';
-      	menu.style.top=event.pageY + 'px';
-      	menu.style.visibility= "visible";
-      });
-
-      document.onclick=function(event){
-      	document.getElementById('menu').style.visibility= "hidden";
-      };
-	</script>
+    <canvas id="canvas" style="border:1px solid blue;display:block;margin:50px auto">
+    	
+    </canvas>
+    <script type="text/javascript" src="array.js"></script>
+    <script type="text/javascript" src="dw.js"></script>
+	
 </body>
 </html>
