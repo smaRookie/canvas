@@ -31,30 +31,22 @@
 				arr.push(0)
 			}
 			let n
-			let y = 0
-			setInterval(() => {
-				canvasContext.fillStyle = '#000'
+			function draw () {
+				canvasContext.fillStyle = 'rgba(0, 0, 0, 0.04)'
 				canvasContext.fillRect(0, 0, W, H)
+				canvasContext.font = "bold 12px 微软雅黑"
 				canvasContext.fillStyle = '#16BE44'
-				canvasContext.fillText('a', 100, y)
-				y = y + 20
-			}, 1000)
-			// function draw () {
-			// 	canvasContext.fillStyle = 'rgba(0, 0, 0, 0.04)'
-			// 	canvasContext.fillRect(0, 0, W, H)
-			// 	canvasContext.font = "bold 12px 微软雅黑"
-			// 	canvasContext.fillStyle = '#16BE44'
-			// 	for (let i = 0; i < column; i++) {
-			// 		n = Math.floor(Math.random() * str.length)
-			// 		canvasContext.fillText(str[n], i * fontSize, arr[i] * fontSize)
-			// 		if (arr[i] * fontSize > H && Math.random() > 0.99) {
-			// 			arr[i] = 0
-			// 		}
-			// 		arr[i]++
-			// 	}
-			// }
-			// draw()
-			// setInterval(draw, 20)
+				for (let i = 0; i < column; i++) {
+					n = Math.floor(Math.random() * str.length)
+					canvasContext.fillText(str[n], i * fontSize, arr[i] * fontSize)
+					if (arr[i] * fontSize > H && Math.random() > 0.99) {
+						arr[i] = 0
+					}
+					arr[i]++
+				}
+			}
+			draw()
+			setInterval(draw, 20)
 		}
 	</script>
 </body>
