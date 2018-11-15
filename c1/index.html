@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		body {
+			overflow: hidden;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="canvas">你的浏览器不支持canvas</canvas>
+	<script>
+		window.onload = function () {
+			let H = window.innerHeight
+			let W = window.innerWidth
+			canvas = document.getElementById('canvas')
+			canvasContext = canvas.getContext('2d')
+			canvas.height = H
+			canvas.width = W
+			let fontSize = 12
+			let column = Math.floor(W / fontSize)
+			let str = "01"
+			let arr = []	
+			for (let i = 0; i < column; i++) {
+				arr.push(0)
+			}
+			let n
+			let y = 0
+			setInterval(() => {
+				canvasContext.fillStyle = '#000'
+				canvasContext.fillRect(0, 0, W, H)
+				canvasContext.fillStyle = '#16BE44'
+				canvasContext.fillText('a', 100, y)
+				y = y + 20
+			}, 1000)
+			// function draw () {
+			// 	canvasContext.fillStyle = 'rgba(0, 0, 0, 0.04)'
+			// 	canvasContext.fillRect(0, 0, W, H)
+			// 	canvasContext.font = "bold 12px 微软雅黑"
+			// 	canvasContext.fillStyle = '#16BE44'
+			// 	for (let i = 0; i < column; i++) {
+			// 		n = Math.floor(Math.random() * str.length)
+			// 		canvasContext.fillText(str[n], i * fontSize, arr[i] * fontSize)
+			// 		if (arr[i] * fontSize > H && Math.random() > 0.99) {
+			// 			arr[i] = 0
+			// 		}
+			// 		arr[i]++
+			// 	}
+			// }
+			// draw()
+			// setInterval(draw, 20)
+		}
+	</script>
+</body>
+</html>
